@@ -26,3 +26,11 @@ variable "min_size" {
 variable "max_size" {
   description = "The maximum number of EC2 Instances in the ASG"
 }
+
+#variable "s3_remote_state_bucket" {
+#  description = "Remote State S3 bucket name"
+#}
+#variable "webserver_remote_state_key" {
+#  description = "Remote State file name for webserver in S3 bucket name"
+#}
+

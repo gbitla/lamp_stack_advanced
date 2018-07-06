@@ -8,8 +8,9 @@ data "template_file" "user_data" {
 
   vars {
     server_port = "${var.server_port}"
-    db_address  = "${data.terraform_remote_state.db.address}"
-    db_port     = "${data.terraform_remote_state.db.port}"
+
+    #db_address  = "${data.terraform_remote_state.db.address}"
+    #db_port = "${data.terraform_remote_state.db.port}"
   }
 }
 
@@ -122,12 +123,13 @@ data "terraform_remote_state" "db" {
   }
 }
 
-terraform {
-  backend "s3" {
-    bucket         = "gb1-master-tf-state"
-    key            = "stage/services/webserver-cluster/terraform.tfstate"
-    region         = "us-east-1"
-    encrypt        = true
-    dynamodb_table = "terraform-lock"
-  }
-}
+#terraform {
+#  backend "s3" {
+#    bucket         = "${var.s3_remote_state_bucket}"
+#    key            = "${var.webserver_remote_state_key}"
+#    region         = "us-east-1"
+#    encrypt        = true
+#    dynamodb_table = "terraform-lock"
+#  }
+#}
+
