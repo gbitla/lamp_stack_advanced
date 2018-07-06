@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "gb1-master-tf-state"
+  bucket = "gb1-master-tf-state-advanced"
 
   versioning {
     enabled = true
@@ -17,10 +17,10 @@ resource "aws_s3_bucket" "terraform_state" {
 #reference - http://2ndwatch.com/blog/migratingterraformremoate/
 terraform {
   backend "s3" {
-    bucket         = "gb1-master-tf-state"
+    bucket         = "gb1-master-tf-state-advanced"
     key            = "global/s3/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
-    dynamodb_table = "terraform-lock"
+    dynamodb_table = "terraform-lock-advanced"
   }
 }

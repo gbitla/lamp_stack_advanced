@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "gb1-master-tf-state"
+  bucket = "gb1-master-tf-state-advanced"
 
   versioning {
     enabled = true
