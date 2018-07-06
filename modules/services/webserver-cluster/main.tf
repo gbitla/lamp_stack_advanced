@@ -66,7 +66,7 @@ resource "aws_autoscaling_group" "example" {
 }
 
 resource "aws_elb" "example" {
-  name               = "terraform-asg-example"
+  name               = "${var.elb_name}"
   availability_zones = ["${data.aws_availability_zones.all.names}"]
   security_groups    = ["${aws_security_group.elb-sg.id}"]
 
@@ -88,6 +88,8 @@ resource "aws_elb" "example" {
 
 resource "aws_security_group" "elb-sg" {
   name = "${var.cluster_name}-elb"
+
+  #name = "terraform-example-elb"
 }
 
 resource "aws_security_group_rule" "allow_http_inbound" {

@@ -6,7 +6,7 @@ cat > index.html <<EOF
 <h1> </h1>
 <p1>Infrastructure as code is the approach to defining computing and network infrastructure</p1> 
 <p1>through source code that can then be treated just like any software system</p1>
-
+<h1> </h1>
 <p1> Caution: You should put lot of thoughts into isolation, locking and state towards</p1>
 <p1> infrastructure as code as it enables different trade-offs than normal coding. When you're </p1>
 <p1> writing code for a typical app, most bugs are relatively minor and only break a </p1>

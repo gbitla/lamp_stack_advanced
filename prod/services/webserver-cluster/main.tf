@@ -5,6 +5,7 @@ provider "aws" {
 module "webserver_cluster" {
   source                 = "../../../modules/services/webserver-cluster"
   cluster_name           = "webservers-prod"
+  elb_name               = "webserver-prod-elb"
   db_remote_state_bucket = "gb1-master-tf-state-advanced"
   db_remote_state_key    = "prod/data-stores/mysql/terraform.tfstate"
   instance_type          = "t2.micro"

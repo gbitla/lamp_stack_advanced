@@ -27,6 +27,11 @@ variable "max_size" {
   description = "The maximum number of EC2 Instances in the ASG"
 }
 
+variable "elb_name" {
+  description = "ELB name"
+}
+
+
 #variable "s3_remote_state_bucket" {
 #  description = "Remote State S3 bucket name"
 #}
